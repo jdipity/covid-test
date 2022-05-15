@@ -9,7 +9,13 @@
           </q-avatar>
           <b> Your Test</b>
         </q-toolbar-title>
-        <q-btn-dropdown icon="account_circle"></q-btn-dropdown>
+        <q-btn-dropdown icon="account_circle">
+          <div class="text-center">
+            <div class="q-ma-sm"><b>Christine Odenwald</b></div>
+          </div>
+          <q-separator />
+          <UserMenu v-for="link in userItems" :key="link.title" v-bind="link" />
+        </q-btn-dropdown>
       </q-toolbar>
     </div>
 
@@ -84,6 +90,7 @@
 import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import TestResults from "../components/TestResults.vue";
+import UserMenu from "src/components/UserMenu.vue";
 
 const tests = [
   {
@@ -99,6 +106,27 @@ const tests = [
     icon: "science",
     link: "",
     date: "May 20, 2021",
+  },
+];
+
+const menuItems = [
+  {
+    title: "Manage Account",
+    caption: "",
+    icon: "account_circle",
+    link: "#/account",
+  },
+  {
+    title: "Settings",
+    caption: "",
+    icon: "settings",
+    link: "#/settings",
+  },
+  {
+    title: "Logout",
+    caption: "",
+    icon: "power",
+    link: "#/logout",
   },
 ];
 
@@ -127,14 +155,15 @@ export default defineComponent({
 
     return {
       tab: ref("test-results"),
-      essentialLinks: linksList,
       testResults: tests,
+      userItems: menuItems,
+      essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
     };
   },
-  components: { EssentialLink, TestResults },
+  components: { EssentialLink, TestResults, UserMenu },
 });
 </script>
