@@ -7,7 +7,7 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
           </q-avatar>
-          <span class="logo"> Your Test</span>
+          <span class="logo"> YourTest™</span>
         </q-toolbar-title>
         <q-btn-dropdown icon="account_circle">
           <div class="text-center">
