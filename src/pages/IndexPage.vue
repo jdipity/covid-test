@@ -7,7 +7,7 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
           </q-avatar>
-          <b> Your Test</b>
+          <span class="logo"> Your Test</span>
         </q-toolbar-title>
         <q-btn-dropdown icon="account_circle">
           <div class="text-center">
@@ -94,17 +94,25 @@ import UserMenu from "src/components/UserMenu.vue";
 
 const tests = [
   {
+    title: "Easy@Home hCG, Rapid Result Antibody Test",
+    caption: "NA",
+    icon: "science",
+    link: "#/test-result/2xDy-46mOm1xT8WV0mPL3",
+    date: "June 01, 2022",
+    new: true,
+  },
+  {
     title: "SARS-COV-2 RNA, QL NAAT, RT PCR/TMA (COVID-19)",
     caption: "Brittany Filliben",
     icon: "science",
-    link: "",
+    link: "#/test-result/2F4A3zuSxyl9jQ-3Dw3Xg",
     date: "July 23, 2021",
   },
   {
     title: "LumiraDX SARS-COV-2 Rapid Result Antigen Test",
     caption: "Mariana Cervantes",
     icon: "science",
-    link: "",
+    link: "#/test-result/24ij-2B61hCZtjF1ICtgb",
     date: "May 20, 2021",
   },
 ];

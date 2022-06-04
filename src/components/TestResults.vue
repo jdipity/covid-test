@@ -4,7 +4,7 @@
       <q-icon :name="icon" />
     </q-item-section>
 
-    <q-item-section>
+    <q-item-section :class="{ bold: isNew }">
       <q-item-label>{{ title }}</q-item-label>
       <q-item-label caption>{{ caption }}</q-item-label>
       <q-item-label caption>{{ date }}</q-item-label>
@@ -42,6 +42,16 @@ export default defineComponent({
       type: String,
       default: "",
     },
+    new: {
+      type: Boolean,
+      default: false,
+    },
   },
 });
 </script>
+
+<style>
+.bold {
+  font-weight: bold;
+}
+</style>
