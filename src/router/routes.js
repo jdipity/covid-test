@@ -6,6 +6,11 @@ const routes = [
     //component: () => import("pages/IndexPage.vue"),
   },
 
+  {
+    path: "/test-result/2xDy-46mOm1xT8WV0mPL3",
+    component: () => import("pages/Results.vue"),
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {
