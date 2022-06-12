@@ -7,7 +7,7 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
           </q-avatar>
-          <span class="logo"> Your Test</span>
+          <span class="logo"> Your Test TEST</span>
         </q-toolbar-title>
         <q-btn-dropdown icon="account_circle">
           <div class="text-center">
@@ -157,7 +157,7 @@ const linksList = [
 ];
 
 export default defineComponent({
-  name: "IndexPage",
+  name: "ResultsPage",
   setup() {
     const leftDrawerOpen = ref(false);
 
