@@ -1,5 +1,12 @@
 <template>
-  <q-card><h3>TEST</h3></q-card>
+  <q-card><h2>TEST</h2></q-card>
+  <q-img
+    src="src/assets/test.jpg"
+    :ratio="16 / 9"
+    style="max-width: 550px; height: 650px"
+  >
+    <div class="absolute-top text-center">Results: YOU ARE POSITIVE!!!</div>
+  </q-img>
 </template>
 
 <script>
