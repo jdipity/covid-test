@@ -41,7 +41,12 @@
 
   <q-card class="q-pa-md">
     <q-card><h3>TEST</h3></q-card>
-    <q-card-section><h5 class="q-ma-sm">Hello, Christine!</h5></q-card-section>
+    <q-card-section
+      ><h5 class="q-ma-sm">Hello, Christine!</h5>
+      <p class="q-ma-sm">
+        Select the test below that you would like to view.
+      </p></q-card-section
+    >
     <q-separator></q-separator>
     <q-card-section>
       <q-tab-panels v-model="tab" animated>

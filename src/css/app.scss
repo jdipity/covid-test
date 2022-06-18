@@ -1,6 +1,19 @@
 // app global css in SCSS form
 .logo {
   font-family: "Gentium Book Basic", serif;
-  font-size: 30px;
+  //font-size: 2vw;
   margin: auto;
+}
+
+@media screen and (min-width: 401px) {
+  .logo {
+    font-size: 30px;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 400px) {
+  .logo {
+    font-size: 25px;
+  }
 }

@@ -9,7 +9,7 @@
       >
         <q-img
           v-show="showSimulatedReturnData"
-          src="src/assets/test.jpg"
+          src="~assets/test.jpg"
           :ratio="16 / 9"
           style="max-width: 550px; height: 650px"
         >
@@ -64,6 +64,6 @@ export default defineComponent({
 <style scoped>
 .card-example {
   width: auto;
-  height: 650px;
+  height: 700px;
 }
 </style>
