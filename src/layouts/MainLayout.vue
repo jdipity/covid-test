@@ -1,67 +1,85 @@
 <template>
-  <q-layout view="hHh lpR fFf"> <router-view></router-view></q-layout>
+  <q-layout view="hHh lpR fFf">
+    <q-header reveal elevated class="bg-primary text-white" height-hint="98">
+      <div class="q-pa-md q-gutter-y-sm">
+        <q-toolbar>
+          <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+          <q-toolbar-title>
+            <q-avatar>
+              <img
+                src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg"
+              />
+            </q-avatar>
+            <span class="logo"> YourTest™</span>
+          </q-toolbar-title>
+          <q-btn-dropdown icon="account_circle">
+            <div class="text-center">
+              <div class="q-ma-sm"><b>Christine Odenwald</b></div>
+            </div>
+            <q-separator />
+            <UserMenu
+              v-for="link in userItems"
+              :key="link.title"
+              v-bind="link"
+            />
+          </q-btn-dropdown>
+        </q-toolbar>
+      </div>
+
+      <q-tabs v-model="tab" align="left">
+        <q-tab name="test-results" label="Test Results" />
+        <q-route-tab
+          to="/schedule-appointment"
+          name="schedule-appointment"
+          label="Schedule Appointment"
+        />
+        <q-route-tab to="/payments" name="payments" label="Payments" />
+      </q-tabs>
+    </q-header>
+    <q-drawer v-model="leftDrawerOpen" side="left" behavior="mobile" bordered>
+      <div><h6 class="q-ma-xs">Menu</h6></div>
+      <UserMenu v-for="link in userItems" :key="link.title" v-bind="link" />
+    </q-drawer>
+    <router-view></router-view>
+  </q-layout>
 </template>
 
 <script>
 import { defineComponent, ref } from "vue";
-import EssentialLink from "components/EssentialLink.vue";
+import UserMenu from "src/components/UserMenu.vue";
 
-const linksList = [
+const menuItems = [
   {
-    title: "Docs",
-    caption: "quasar.dev",
-    icon: "school",
-    link: "https://quasar.dev",
+    title: "Manage Account",
+    caption: "",
+    icon: "account_circle",
+    link: "#/account",
   },
   {
-    title: "Github",
-    caption: "github.com/quasarframework",
-    icon: "code",
-    link: "https://github.com/quasarframework",
+    title: "Settings",
+    caption: "",
+    icon: "settings",
+    link: "#/settings",
   },
   {
-    title: "Discord Chat Channel",
-    caption: "chat.quasar.dev",
-    icon: "chat",
-    link: "https://chat.quasar.dev",
-  },
-  {
-    title: "Forum",
-    caption: "forum.quasar.dev",
-    icon: "record_voice_over",
-    link: "https://forum.quasar.dev",
-  },
-  {
-    title: "Twitter",
-    caption: "@quasarframework",
-    icon: "rss_feed",
-    link: "https://twitter.quasar.dev",
-  },
-  {
-    title: "Facebook",
-    caption: "@QuasarFramework",
-    icon: "public",
-    link: "https://facebook.quasar.dev",
-  },
-  {
-    title: "Quasar Awesome",
-    caption: "Community Quasar projects",
-    icon: "favorite",
-    link: "https://awesome.quasar.dev",
+    title: "Logout",
+    caption: "",
+    icon: "power",
+    link: "#/logout",
   },
 ];
 
 export default defineComponent({
   name: "MainLayout",
 
-  components: {},
+  components: { UserMenu },
 
   setup() {
     const leftDrawerOpen = ref(false);
 
     return {
       tab: "test-results",
-      essentialLinks: linksList,
+      userItems: menuItems,
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;

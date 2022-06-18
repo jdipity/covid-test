@@ -1,5 +1,5 @@
 <template>
-  <q-header elevated class="bg-primary text-white" height-hint="98">
+  <!--<q-header elevated class="bg-primary text-white" height-hint="98">
     <div class="q-pa-md q-gutter-y-sm">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
@@ -37,7 +37,7 @@
       :key="link.title"
       v-bind="link"
     />
-  </q-drawer>
+  </q-drawer>-->
 
   <q-card class="q-pa-md">
     <q-card><h3>TEST</h3></q-card>
@@ -95,9 +95,9 @@ import UserMenu from "src/components/UserMenu.vue";
 const tests = [
   {
     title: "Easy@Home hCG, Rapid Result Antibody Test",
-    caption: "NA",
+    caption: "Self-administered",
     icon: "science",
-    link: "#/test-result/2xDy-46mOm1xT8WV0mPL3",
+    link: "#/test-result/4fGmt-x4m0mS4t27dxlPs",
     date: "June 01, 2022",
     new: true,
   },
@@ -172,6 +172,6 @@ export default defineComponent({
       },
     };
   },
-  components: { EssentialLink, TestResults, UserMenu },
+  components: { TestResults /*EssentialLink, TestResults, UserMenu */ },
 });
 </script>
